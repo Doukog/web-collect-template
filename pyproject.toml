@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "aioconsole>=0.8.2",
+    "aiofiles>=25.1.0",
     "loguru>=0.7.3",
     "patchright>=1.55.2",
     "ruamel-yaml>=0.18.16",
