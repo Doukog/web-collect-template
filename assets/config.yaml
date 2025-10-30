@@ -1,0 +1,6 @@
+patchright:
+  chrome_path: "E:/Chrome/chrome.exe"
+  headless: false
+  port: 11111
+  page_timeout: 10
+  node_timeout: 10
