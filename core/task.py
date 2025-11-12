@@ -23,7 +23,7 @@ class Task:
 
     async def visit(self, url):
         try:
-            await self.page.goto(url, timeout=Config.patchright.page_timeout)
+            await self.page.goto(url, timeout=Config.patchright.page_timeout * 1000)
             return None
         except Exception:
             return f"visit {url} timeout"
