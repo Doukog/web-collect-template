@@ -55,7 +55,15 @@ class Task:
 
         return None
 
-    async def init_patchright(self):
+    async def init_patchright_url(self):
+        async with async_playwright() as playwright:
+            browser = await playwright.chromium.connect_over_cdp(Config.patchright.cdp_url)
+            self.page = browser.contexts[0].pages[0]
+
+            err = await self.logic()
+            return err
+
+    async def init_patchright_browser(self):
         async with async_playwright() as playwright:
             browser = await playwright.chromium.launch_persistent_context(
                 bypass_csp=True,
@@ -93,7 +101,7 @@ class Task:
             return err
 
     async def start(self):
-        err = await self.init_patchright()
+        err = await self.init_patchright_browser()
         if err:
             logger.error(err)
             return

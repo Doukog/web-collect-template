@@ -1,5 +1,6 @@
 patchright:
   chrome_path: "E:/Chrome/chrome.exe"
+  cdp_url: "http://127.0.0.1:10025"
   headless: false
   port: 11111
   page_timeout: 10
